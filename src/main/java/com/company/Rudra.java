@@ -15,6 +15,7 @@ public class Rudra {
 
 
         String inputname=sc.nextLine();
+        int inputempId =sc.nextInt();
         int res1=getNameByInput(obj,inputname);
         if(res1==1){
             System.out.println("present in list");
@@ -22,6 +23,15 @@ public class Rudra {
         else{
             System.out.println("name not present");
         }
+        int res2=getEmpidByInput(obj,inputempId);
+        if(res2==1){
+            System.out.println(" empid present in list");
+        }
+        else{
+            System.out.println("empid not present");
+        }
+
+
     }
     public static int getNameByInput(Action obj,String inputname){
         int count=0;
@@ -34,6 +44,17 @@ public class Rudra {
 
 
         return count;
+    }
+    public static int getEmpidByInput(Action obj,int inputempId){
+        int count =0;
+        for(int i=0;i<5;i++){
+            if(obj.getEmpid()==(inputempId)){
+                count=1;
+                break;
+            }
+        }
+        return count;
+
     }
 }
 class Action{
