@@ -3,14 +3,16 @@ import java.util.Scanner;
 public class Rudra {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-
-//        String name =sc.nextLine();
-//        int age=sc.nextInt();sc.nextLine();
-//        float salary=sc.nextFloat();sc.nextLine();
-//        String department=sc.nextLine();
-//        int Empid=sc.nextInt();sc.nextLine();
-//        Action obj=new Action(name,age,salary,department,Empid);
-        Action obj = new Action("sidharth",23,50000,"it",23456);
+        Action [] obj=new Action[2];
+        for(int i=0;i<obj.length;i++) {
+            String name = sc.nextLine();
+            int age = sc.nextInt();sc.nextLine();
+            float salary = sc.nextFloat();sc.nextLine();
+            String department = sc.nextLine();
+            int Empid = sc.nextInt();sc.nextLine();
+            obj[i] = new Action(name, age, salary, department, Empid);
+        }
+//        Action obj = new Action("sidharth",23,50000,"it",23456);
 
 
 
@@ -18,7 +20,7 @@ public class Rudra {
         int inputempId =sc.nextInt();
         int res1=getNameByInput(obj,inputname);
         if(res1==1){
-            System.out.println("present in list");
+            System.out.println("name present in list");
         }
         else{
             System.out.println("name not present");
@@ -33,10 +35,10 @@ public class Rudra {
 
 
     }
-    public static int getNameByInput(Action obj,String inputname){
+    public static int getNameByInput(Action[] obj,String inputname){
         int count=0;
-        for(int i=0;i<5;i++){
-            if(obj.getName().equalsIgnoreCase(inputname)){
+        for(int i=0;i<obj.length;i++){
+            if(obj[i].getName().equalsIgnoreCase(inputname)){
                 count=1;
                 break;
             }
@@ -45,10 +47,10 @@ public class Rudra {
 
         return count;
     }
-    public static int getEmpidByInput(Action obj,int inputempId){
+    public static int getEmpidByInput(Action[] obj,int inputempId){
         int count =0;
-        for(int i=0;i<5;i++){
-            if(obj.getEmpid()==(inputempId)){
+        for(int i=0;i<obj.length;i++){
+            if(obj[i].getEmpid()==(inputempId)){
                 count=1;
                 break;
             }
